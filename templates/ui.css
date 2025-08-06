@@ -1,0 +1,131 @@
+/* 
+  Dark theme with a background image and centered text 
+*/
+
+/* Body: Background Image, centered text, and full-viewport coverage */
+body {
+  margin: 0;
+  padding: 0;
+  background: url("dxo2.jpg") no-repeat center center fixed;
+  background-size: cover;
+  font-family: Arial, sans-serif;
+  color: #f0f0f0;
+  text-align: center;
+  min-height: 100vh; /* ensure the body spans full viewport height */
+  position: relative; /* to allow an optional overlay if desired */
+}
+
+/* Optional: A semi-transparent overlay on top of the image for better text readability */
+body::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(0,0,0,); /* Adjust the alpha for more/less darkness */
+  z-index: 0; /* place it behind the main content */
+}
+
+/* Container to hold page content, ensuring it sits above the overlay */
+#container {
+  position: relative;  /* so it sits above body::before overlay */
+  z-index: 1;         /* stack above the overlay */
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 1.5rem;
+  /* A subtle background inside the container, optional */
+  background-color: rgb(7, 5, 5,0.79);
+  border-radius: 8px;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Headings */
+h1 {
+  margin-bottom: 0.25rem;
+  font-size: 1.8rem;
+}
+
+h2 {
+  margin: 1.5rem 0 0.75rem;
+  font-size: 1.3rem;
+}
+
+/* Paragraph, Horizontal Rule */
+p {
+  line-height: 1.6;
+}
+
+hr {
+  border: none;
+  height: 1px;
+  background-color: #444;
+  margin: 2rem 0;
+}
+
+/* Textarea styling */
+textarea {
+  background-color: rgba(0, 0, 0, 0.7); /* 70% opaque black */
+  color: #f0f0f0;
+  border: 1px solid #444;
+  border-radius: 4px;
+}
+
+
+/* File input spacing */
+#file-input {
+  margin: 1rem 0 0.5rem;
+}
+
+/* Button styling */
+button {
+  cursor: pointer;
+  background-color: #BB86FC; /* Purple accent for a dark theme */
+  border: none;
+  color: #121212;
+  padding: 0.6rem 1.2rem;
+  margin-top: 0.5rem;
+  border-radius: 4px;
+  font-size: 1rem;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+button:hover {
+  background-color: #9c4dcc;
+  color: #ffffff;
+}
+
+/* Result and batch display containers */
+#analysis-result,
+.batch-results {
+  margin-top: 1rem;
+  padding: 1rem;
+  border: 1px solid #444;
+  border-radius: 4px;
+  background-color: #2b2b2b;
+  text-align: left; /* left-align the text inside for readability */
+  display: inline-block;
+  width: auto;
+  max-width: 95%;
+}
+
+/* Headings inside results should be purple to match button accent */
+#analysis-result h3,
+#analysis-result h4,
+.batch-results h3,
+.batch-results h4 {
+  margin-top: 0;
+  color: #BB86FC;
+}
+
+/* Code-like pre styling */
+pre {
+  background-color: #1f1f1f;
+  padding: 0.75rem;
+  border-radius: 4px;
+  overflow-x: auto;
+  color: #f0f0f0;
+  font-size: 0.9rem;
+}

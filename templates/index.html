@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>AI vs. Human Text Detector</title>
+  <!-- Link to the external CSS file -->
+  <link rel="stylesheet" href="ui.css">
+</head>
+<body>
+  <div id="container">
+    <h1>AI vs. Human Text Detector</h1>
+    <p>
+      This tool attempts to differentiate between AI-generated text and human-written text. 
+      You can paste text directly for analysis or upload files in bulk.
+    </p>
+
+    <!-- 1) Plain Text Analysis -->
+    <section id="text-analyzer">
+      <h2>Analyze Plain Text</h2>
+      <textarea id="text-input" rows="6" placeholder="Type or paste your text here..."></textarea>
+      <br />
+      <button id="analyze-button">Analyze Text</button>
+
+      <!-- Result Display -->
+      <div id="analysis-result" style="display:none;">
+        <h3>Prediction: <span id="prediction-value"></span></h3>
+        <h4>Model Insights</h4>
+        <pre id="features-pre"></pre>
+      </div>
+    </section>
+
+    <hr />
+
+    <!-- 2) File Upload (Batch) Analysis -->
+    <section id="file-uploader">
+      <h2>Upload .docx or .txt files</h2>
+      <input
+        type="file"
+        id="file-input"
+        multiple
+        accept=".docx,.txt"
+      />
+      <button id="upload-button">Analyze Files</button>
+
+      <!-- Batch Results Display -->
+      <div id="batch-results" class="batch-results" style="display:none;"></div>
+    </section>
+  </div>
+
+  <!-- Link to the external JavaScript file -->
+  <script src="script.js"></script>
+</body>
+</html>
